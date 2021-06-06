@@ -18,8 +18,14 @@ public class GerenciaContas {
     }
 
     public void adicionarConta(Conta conta, Cliente c) {
-        conta.setCliente(c);
-        this.contas.add(conta);
+
+        if (!isNull(this.buscarConta(conta.getNumero()))){
+            System.out.println("Já existe uma conta cadastrada com o número: " + conta.getNumero());
+        } else {
+            conta.setCliente(c);
+            this.contas.add(conta);
+            System.out.println("Cadastro realizado com sucesso! Dados da conta: " + conta.toString());
+        }
     }
 
     public boolean removerConta(String cpf) {
