@@ -28,14 +28,14 @@ public class GerenciaContas {
         }
     }
 
-    public boolean removerConta(String cpf) {
+    public boolean removerConta(int numero) {
 
         Iterator<Conta> i = contas.iterator();
 
         while (i.hasNext()) {
             Conta c = i.next();
 
-            if (c.getCliente().getCpf().equals(cpf)) {
+            if (c.getNumero() == numero) {
                 i.remove();
 
                 return true;

@@ -10,13 +10,15 @@ public class ContaCorrente extends Conta {
     public boolean depositar(double valor) {
         super.setSaldo(super.getSaldo() + valor);
 
-        return false;
+        return true;
     }
 
     @Override
     public boolean sacar(double valor) {
         if (super.getSaldo() >= valor) {
             super.setSaldo(super.getSaldo() - valor);
+
+            return true;
         }
 
         return false;

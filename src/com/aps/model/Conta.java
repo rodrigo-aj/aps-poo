@@ -18,10 +18,6 @@ public abstract class Conta {
         return numero;
     }
 
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
     public double getSaldo() {
         return saldo;
     }

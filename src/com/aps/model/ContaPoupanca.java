@@ -22,6 +22,8 @@ public class ContaPoupanca extends Conta {
     public boolean sacar(double valor) {
         if (super.getSaldo() >= (valor)) {
             super.setSaldo(super.getSaldo() - (valor + this.taxa));
+
+            return true;
         }
 
         return false;

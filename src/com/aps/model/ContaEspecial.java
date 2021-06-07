@@ -4,21 +4,26 @@ public class ContaEspecial extends Conta {
 
     private double limite;
 
-
     public ContaEspecial(int numero) {
         super(numero);
+        this.setLimite(2000);
     }
 
     @Override
     public boolean depositar(double valor) {
         super.setSaldo(super.getSaldo() + valor);
 
-        return false;
+        return true;
     }
 
     @Override
     public boolean sacar(double valor) {
-        super.setSaldo(super.getSaldo() - valor);
+        if (super.getSaldo() >= (valor + getLimite())) {
+            super.setSaldo(super.getSaldo() - valor);
+
+            return true;
+        }
+
         return false;
     }
 
